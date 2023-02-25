@@ -1,0 +1,101 @@
+{
+  "name": "coc-paste-pandoc",
+  "version": "0.2.1",
+  "description": "paste clipboard contents with pandoc transform for coc.nvim",
+  "author": "Jee Wan Gue <jeewangue@gmail.com>",
+  "homepage": "https://github.com/jeewangue/coc-paste-pandoc",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeewangue/coc-paste-pandoc.git"
+  },
+  "license": "MIT",
+  "main": "lib/index.js",
+  "keywords": [
+    "vim",
+    "neovim",
+    "coc.nvim",
+    "paste",
+    "clipboard",
+    "pandoc"
+  ],
+  "engines": {
+    "coc": "^0.0.80"
+  },
+  "scripts": {
+    "lint": "eslint src --ext ts",
+    "clean": "rimraf lib",
+    "watch": "node esbuild.js --watch",
+    "build": "node esbuild.js",
+    "prepare": "node esbuild.js"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 120,
+    "trailingComma": "all",
+    "semi": true
+  },
+  "activationEvents": [
+    "*"
+  ],
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "coc-paste-pandoc configuration",
+      "properties": {
+        "paste.pandoc.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable coc-paste-pandoc extension"
+        },
+        "paste.pandoc.logLevel": {
+          "type": "string",
+          "default": "debug",
+          "enum": [
+            "trace",
+            "debug",
+            "info",
+            "warn",
+            "error",
+            "fatal",
+            "off"
+          ],
+          "description": "logging level of coc-paste-pandoc"
+        },
+        "paste.pandoc.selection": {
+          "type": "string",
+          "default": "clipboard",
+          "enum": [
+            "clipboard",
+            "primary",
+            "secondary"
+          ],
+          "description": "the selection of xclip to be used. defaults to `clipboard`"
+        }
+      }
+    }
+  },
+  "devDependencies": {
+    "@types/jest": "^29.4.0",
+    "@types/lodash": "^4.14.191",
+    "@types/node": "^18.14.1",
+    "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "@typescript-eslint/parser": "^5.53.0",
+    "async-mutex": "^0.4.0",
+    "coc-helper": "^0.16.3",
+    "coc.nvim": "^0.0.83-next.9",
+    "esbuild": "^0.17.10",
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "got": "^12.5.3",
+    "jest": "^29.4.3",
+    "lodash": "^4.17.21",
+    "prettier": "^2.8.4",
+    "rimraf": "^4.1.2",
+    "ts-jest": "^29.0.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5",
+    "zx": "^7.1.1"
+  },
+  "dependencies": {}
+}
