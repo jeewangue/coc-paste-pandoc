@@ -1,6 +1,6 @@
 {
   "name": "coc-paste-pandoc",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "paste clipboard contents with pandoc transform for coc.nvim",
   "author": "Jee Wan Gue <jeewangue@gmail.com>",
   "homepage": "https://github.com/jeewangue/coc-paste-pandoc",
